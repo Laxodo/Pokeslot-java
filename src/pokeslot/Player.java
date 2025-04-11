@@ -7,7 +7,7 @@ public class Player {
 
     private Random rn = new Random();
     private String Nombre;
-    private ArrayList<PokemonEnum> inventario;
+    private ArrayList<Pokemon> inventario;
     private float puntos;
 
     public Player() {
@@ -16,7 +16,7 @@ public class Player {
         this.puntos = 0.0f;
     }
 
-    public Player(String Nombre, ArrayList<PokemonEnum> inventario, float puntos) {
+    public Player(String Nombre, ArrayList<Pokemon> inventario, float puntos) {
         this.Nombre = Nombre;
         this.inventario = inventario;
         this.puntos = puntos;
@@ -35,9 +35,13 @@ public class Player {
         return null;
     }
     
-    public int Transferir(){
-        if(!this.getInventario().isEmpty()){
-            
+    public int Transferir(String pokemon){
+        if(!this.inventario.isEmpty()){
+            for(Pokemon pk : inventario){
+                if(pk.getNombre().equals(pokemon)){
+                    GanarPuntos(pk.getValue());
+                }
+            }
         }
         return 0;
     }
@@ -46,11 +50,15 @@ public class Player {
         return Nombre;
     }
 
-    public ArrayList<PokemonEnum> getInventario() {
+    public ArrayList<Pokemon> getInventario() {
         return inventario;
     }
 
     public float getPuntos() {
         return puntos;
+    }
+    
+    private void GanarPuntos(float a){
+        puntos += a;
     }
 }
