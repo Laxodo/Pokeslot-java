@@ -52,12 +52,8 @@ public class Pokeslot {
             String[] a = sc.nextLine().split(" ");
 
             switch (a.length) {
-                case 1:
-                    p1.Transferir(a[0]);
-                    break;
-                case 2:
-                    p1.Transferir(a[0], Integer.parseInt(a[1]));
-                    break;
+                case 1 -> p1.Transferir(a[0]);
+                case 2 -> p1.Transferir(a[0], Integer.parseInt(a[1]));
             }
             sc.close();
         }
