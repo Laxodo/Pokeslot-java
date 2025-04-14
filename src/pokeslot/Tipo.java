@@ -1,7 +1,7 @@
 package pokeslot;
 
 public enum Tipo {
-    Comun(0.5f, 20),
+    Comun(0.5f, 3),
     PocoComun(1.0f, 40),
     Raro(2.0f, 40),
     SuperRaro(5.0f, 10),

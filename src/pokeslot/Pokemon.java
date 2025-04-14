@@ -29,10 +29,6 @@ public final class Pokemon {
         return null;
     }
 
-    public Random getRn() {
-        return rn;
-    }
-
     public static int getShinyProbability() {
         return ShinyProbability;
     }
